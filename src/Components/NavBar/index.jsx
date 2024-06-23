@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logos from "./favicon.png";
 import styles from "./NavBar.module.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const pages = ["Home", "Nuevo"];
 
 
@@ -31,7 +31,10 @@ function NavBar() {
   const link = (page) =>{
     if (page.target.innerText === "HOME" ) {
       navigate(`/`)
-    }else{
+    }else if (page.target.innerText === "Music Gallery" ) {
+      navigate(`/`)
+    }
+    else{
       navigate(`/${page.target.innerText}`)
     }
     console.log(page.target.innerText);
@@ -44,12 +47,13 @@ function NavBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logos} alt="logo" className={styles.logo}></img>
+          <img src={logos} alt="logo" className={styles.logo} onClick={link}></img>
+
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            onClick={link}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -60,7 +64,9 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
+            
             {Titulo}
+            
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -104,7 +110,7 @@ function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            onClick={link}
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
