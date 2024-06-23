@@ -7,34 +7,37 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import logos from "./favicon.png";
 import styles from "./NavBar.module.css";
+import { useNavigate } from "react-router-dom";
 const pages = ["Home", "Nuevo"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const link = (page) =>{
+    if (page.target.innerText === "HOME" ) {
+      navigate(`/`)
+    }else{
+      navigate(`/${page.target.innerText}`)
+    }
+    console.log(page.target.innerText);
+    
+  }
+
 
   const Titulo = "Music Gallery"
   return (
@@ -46,7 +49,7 @@ function NavBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -90,7 +93,7 @@ function NavBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={link}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -119,7 +122,7 @@ function NavBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={link}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
