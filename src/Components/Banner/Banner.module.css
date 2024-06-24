@@ -1,0 +1,28 @@
+.container{
+height: 50vh;
+background-image: url("/assets/partituras-musicales_97-sombra.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+align-items: center; /* Centra verticalmente */
+justify-content: space-around;
+}
+
+.video{
+    border: 5px solid white;
+border-radius: 10px;
+}
+
+.contenido{
+    display: block;
+}
+.contenido h2{
+    color: white;
+    font-size: 50px;
+    text-shadow: 1px 1px 5px black;
+}
+
+.contenido p{
+    color: white;
+    font-size: 30px;
+}

@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logos from "./favicon.png";
 import styles from "./NavBar.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 const pages = ["Home", "Nuevo"];
 
 

@@ -1,0 +1,54 @@
+{
+    "Genero": [
+        {
+            "id": 1,
+            "titulo": "Anime",
+            "colorPrimario": "#57C278",
+            "colorSecundario": "#D9F7E9"
+        },
+        {
+            "id": 2,
+            "titulo": "Rock",
+            "colorPrimario": "#82CFFA",
+            "colorSecundario": "#E8F8FF"
+        },
+        {
+            "id": 3,
+            "titulo": "Musica Clasica",
+            "colorPrimario": "#A6D157",
+            "colorSecundario": "#F0F8E2"
+        },
+        {
+            "id": 4,
+            "titulo": "Electro swimn",
+            "colorPrimario": "#FFF5D9",
+            "colorSecundario": "#FFBA05"
+        }
+    ],
+    "Cancion": [
+        {
+            "id": 1,
+            "titulo": "AISHITE AISHITE AISHITE (愛して愛して愛して)",
+            "genero": "Anime",
+            "url": "https://www.youtube.com/watch?v=7xvnoo8HgZU"
+        },
+        {
+            "id": 2,
+            "genero": "Rock",
+            "titulo": "Hombres G - Devuélveme a mi chica",
+            "url": "https://www.youtube.com/watch?v=bUJLdaxJlD8"
+        },
+        {
+            "id": 3,
+            "genero": "Musica Clasica",
+            "titulo": "Niccolo Paganini - La campanella",
+            "url": "https://www.youtube.com/watch?v=6ruHDWSNvB8"
+        },
+        {
+            "id": 4,
+            "genero": "Electro swimn",
+            "titulo": "Caravan Palace - Rock It For Me (Official MV)",
+            "url": "https://www.youtube.com/watch?v=fBGSJ3sbivI"
+        }
+    ]
+}
