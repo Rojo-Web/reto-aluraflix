@@ -1,15 +1,6 @@
-import { Container, Typography } from "@mui/material";
+import { urlCodigo } from "../../API/Api";
 import styles from "./Banner.module.css";
 
-const urlCodigo = (str) => {
-  const index = str.indexOf("=");
-
-  if (index !== -1) {
-    return str.substring(index + 1);
-  } else {
-    return "";
-  }
-};
 
 const Banner = (props) => {
   const { Titulo, Parrafo, url } = props;

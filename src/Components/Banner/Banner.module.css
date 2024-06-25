@@ -26,3 +26,15 @@ border-radius: 10px;
     color: white;
     font-size: 30px;
 }
+
+@media (max-height: 673px) {
+    .container{
+        height: 80vh;
+        background-image: url("/assets/partituras-musicales_97-sombra.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center; /* Centra verticalmente */
+        justify-content: space-around;
+        }
+  }

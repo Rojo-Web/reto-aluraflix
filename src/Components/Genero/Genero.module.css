@@ -1,7 +1,12 @@
-.contenedor{
-    height: 100vh;
+.container{
+    padding: 1% 0%;
 }
 
 .titulo{
-    margin: 0% 2%;
+    margin: 0% 3%;
+}
+
+.canciones{
+    padding: 2% 2%;
+    justify-content: space-around;
 }
