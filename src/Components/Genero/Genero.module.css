@@ -1,5 +1,6 @@
 .container{
     padding: 1% 0%;
+    display: flex;
 }
 
 .titulo{
@@ -8,5 +9,7 @@
 
 .canciones{
     padding: 2% 2%;
+    display: flex;
     justify-content: space-around;
+    
 }

@@ -11,7 +11,8 @@ export default function MediaCard(props) {
     const urlVideo = urlCodigo(url)
     console.log(urlVideo)
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    
+    <Card sx={{ maxWidth: 345 }} style={{marginRight: 5 + 'em'}}>
 
       <iframe
         // className={styles.video}
@@ -30,8 +31,8 @@ export default function MediaCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Editar</Button>
+        <Button size="small">Eliminar</Button>
       </CardActions>
     </Card>
   );

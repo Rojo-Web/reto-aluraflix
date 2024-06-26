@@ -49,6 +49,30 @@
             "genero": "Electro swimn",
             "titulo": "Caravan Palace - Rock It For Me (Official MV)",
             "url": "https://www.youtube.com/watch?v=fBGSJ3sbivI"
+        },
+        {
+            "id": 5,
+            "titulo": "【LIVE映像】愛して愛して愛して PEACOCK THEATER Los Angeles, CA 2024.3.29【Ado】",
+            "genero": "Anime",
+            "url": "https://www.youtube.com/watch?v=HmkbBdD8044"
+        },
+        {
+            "id": 6,
+            "genero": "Rock",
+            "titulo": "Coldplay - Yellow (Official Video)",
+            "url": "https://www.youtube.com/watch?v=yKNxeF4KMsY"
+        },
+        {
+            "id": 7,
+            "genero": "Musica Clasica",
+            "titulo": "Clair de Lune (Studio Version)",
+            "url": "https://www.youtube.com/watch?v=JGJPVl7iQUM"
+        },
+        {
+            "id": 8,
+            "genero": "Electro swimn",
+            "titulo": "Caravan Palace - Dramophone (Official MV)",
+            "url": "https://www.youtube.com/watch?v=A7lxd7RL1To"
         }
     ]
 }
