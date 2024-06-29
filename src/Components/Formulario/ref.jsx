@@ -1,4 +1,4 @@
-import {  Box, Button, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Button, MenuItem, Select, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { actualizarMusica, enviarMusica } from "../../API/Api";
 import { useNavigate, useParams } from "react-router-dom";
@@ -7,17 +7,15 @@ const Formulario = (props) => {
   const { tipo } = props;
   const { id } = useParams();
   const navigate = useNavigate();
-  const [generos, setgeneros] = useState("");
-
+  
   const [nombre, setNombre] = useState("");
+  const [generos, setGeneros] = useState("");
   const [url, setUrl] = useState("");
-  const [data, setData] = useState([]);
-
-  //Para enviar un mensaje personalizado de error
+  const [data, setData] = useState(null);
+  
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState("");
 
-  //Cargamos cancion
   useEffect(() => {
     const cargarCancion = async () => {
       if (tipo === "EDITAR" && id) {
@@ -33,19 +31,16 @@ const Formulario = (props) => {
     cargarCancion();
   }, [tipo, id]);
 
-  
-
-//Cargamos los datos en los textField
   useEffect(() => {
-    if (data && tipo === "EDITAR") {//La condicion ayuda a evitar las sobre rederizaciones
+    if (data && tipo === "EDITAR") {
       setNombre(data.titulo);
       setUrl(data.url);
-      setgeneros(data.genero);
+      setGeneros(data.genero);
     }
   }, [data, tipo]);
 
   const reset = () => {
-    setgeneros("");
+    setGeneros("");
     setNombre("");
     setUrl("");
   };
@@ -53,9 +48,11 @@ const Formulario = (props) => {
   const manejarNombre = (e) => {
     setNombre(e.target.value);
   };
+
   const manejarGeneros = (e) => {
-    setgeneros(e.target.value);
+    setGeneros(e.target.value);
   };
+
   const manejarUrl = (e) => {
     const { value } = e.target;
     setUrl(value);
@@ -82,9 +79,7 @@ const Formulario = (props) => {
     }
   };
 
-
   const validateUrl = (value) => {
-    //starsWith es para decir que debe de iniciar con
     const isValid = value.startsWith("https://www.youtube.com/");
     setError(!isValid);
     setHelperText(
@@ -104,7 +99,7 @@ const Formulario = (props) => {
         <form onSubmit={manejadorEnvio}>
           <Box
             my={4}
-            display=""
+            display="flex"
             alignItems="center"
             justifyContent="center"
             gap={2}
@@ -112,7 +107,7 @@ const Formulario = (props) => {
           >
             <Box>
               <h2>{tipo === "EDITAR" ? "Edita la canción" : "Crea una canción"}</h2>
-              <p>Llena la pagina de la musica mas magica que se te ocurra</p>
+              <p>Llena la página de la música más mágica que se te ocurra</p>
             </Box>
             <Box
               display="grid"
@@ -135,18 +130,18 @@ const Formulario = (props) => {
                 id="Genero"
                 value={generos}
                 displayEmpty
-                label="Generos"
-                placeholder="Generos"
+                label="Géneros"
+                placeholder="Géneros"
                 onChange={manejarGeneros}
                 required
               >
                 <MenuItem disabled value="">
-                  <em>Generos</em>
+                  <em>Géneros</em>
                 </MenuItem>
                 <MenuItem value="Anime">Anime</MenuItem>
                 <MenuItem value="Rock">Rock</MenuItem>
-                <MenuItem value="Musica Clasica">Musica Clasica</MenuItem>
-                <MenuItem value="Electro swimn">Electro swimn</MenuItem>
+                <MenuItem value="Música Clásica">Música Clásica</MenuItem>
+                <MenuItem value="Electro Swing">Electro Swing</MenuItem>
               </Select>
               <TextField
                 id="URL"
@@ -161,7 +156,7 @@ const Formulario = (props) => {
             </Box>
             <Box gap={5} my={2} display="flex">
               <Button variant="outlined" type="submit">
-              {tipo === "EDITAR" ? "Actualizar Canción" : "Crear Canción"}
+                {tipo === "EDITAR" ? "Actualizar Canción" : "Crear Canción"}
               </Button>
               <Button variant="outlined" type="reset" onClick={reset}>
                 Limpiar

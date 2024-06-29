@@ -8,7 +8,7 @@ import { eliminarCancion, urlCodigo } from "../../API/Api";
 import { useNavigate } from "react-router-dom";
 
 export default function MediaCard(props) {
-  const { titulo, url,identificador, } = props;
+  const { titulo, url,identificador } = props;
   const urlVideo = urlCodigo(url);
   const navigate = useNavigate();
 
@@ -22,6 +22,10 @@ export default function MediaCard(props) {
       })
       .catch((err) => console.log(err));
   };
+
+  const EditarCancion= () => {
+    navigate(`/EDIT/${identificador}`)
+  }
 
   return (
     <Card
@@ -45,7 +49,7 @@ export default function MediaCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Editar</Button>
+        <Button size="small" onClick={EditarCancion}>Editar</Button>
         <Button size="small" onClick={deleteCancion}>Eliminar</Button>
       </CardActions>
     </Card>
