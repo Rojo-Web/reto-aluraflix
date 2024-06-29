@@ -1,6 +1,6 @@
-import {  Box, Button, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Button, MenuItem, Select, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { actualizarMusica, enviarMusica } from "../../API/Api";
+import { actualizarMusica, enviarMusica, get } from "../../API/Api";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Formulario = (props) => {
@@ -13,6 +13,14 @@ const Formulario = (props) => {
   const [url, setUrl] = useState("");
   const [data, setData] = useState([]);
 
+  const [geneross, setGeneros] = useState([]);
+
+  useEffect(() => {
+    get("Genero").then((response) => {
+      setGeneros(response.data);
+    });
+  }, []);
+  console.log("Generos: ",geneross);
   //Para enviar un mensaje personalizado de error
   const [error, setError] = useState(false);
   const [helperText, setHelperText] = useState("");
@@ -33,11 +41,10 @@ const Formulario = (props) => {
     cargarCancion();
   }, [tipo, id]);
 
-  
-
-//Cargamos los datos en los textField
+  //Cargamos los datos en los textField
   useEffect(() => {
-    if (data && tipo === "EDITAR") {//La condicion ayuda a evitar las sobre rederizaciones
+    if (data && tipo === "EDITAR") {
+      //La condicion ayuda a evitar las sobre rederizaciones
       setNombre(data.titulo);
       setUrl(data.url);
       setgeneros(data.genero);
@@ -78,10 +85,9 @@ const Formulario = (props) => {
       }
     } catch (error) {
       console.error("Error al enviar la canción:", error);
-      alert('Algo salió mal');
+      alert("Algo salió mal");
     }
   };
-
 
   const validateUrl = (value) => {
     //starsWith es para decir que debe de iniciar con
@@ -111,7 +117,9 @@ const Formulario = (props) => {
             p={2}
           >
             <Box>
-              <h2>{tipo === "EDITAR" ? "Edita la canción" : "Crea una canción"}</h2>
+              <h2>
+                {tipo === "EDITAR" ? "Edita la canción" : "Crea una canción"}
+              </h2>
               <p>Llena la pagina de la musica mas magica que se te ocurra</p>
             </Box>
             <Box
@@ -143,10 +151,15 @@ const Formulario = (props) => {
                 <MenuItem disabled value="">
                   <em>Generos</em>
                 </MenuItem>
-                <MenuItem value="Anime">Anime</MenuItem>
-                <MenuItem value="Rock">Rock</MenuItem>
-                <MenuItem value="Musica Clasica">Musica Clasica</MenuItem>
-                <MenuItem value="Electro swimn">Electro swimn</MenuItem>
+                {geneross=== null ? <><MenuItem value="">No se han cargado</MenuItem></>
+                :
+                geneross.map((genero, index) => {
+                  return (
+                    <MenuItem key={index} value={genero.titulo}>{genero.titulo}</MenuItem>
+                  );
+                })}
+
+                
               </Select>
               <TextField
                 id="URL"
@@ -161,7 +174,7 @@ const Formulario = (props) => {
             </Box>
             <Box gap={5} my={2} display="flex">
               <Button variant="outlined" type="submit">
-              {tipo === "EDITAR" ? "Actualizar Canción" : "Crear Canción"}
+                {tipo === "EDITAR" ? "Actualizar Canción" : "Crear Canción"}
               </Button>
               <Button variant="outlined" type="reset" onClick={reset}>
                 Limpiar
