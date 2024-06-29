@@ -19,3 +19,20 @@ export const urlCodigo = (str) => {
     return "";
   }
 };
+
+export async function enviarMusica(titulo, url, genero) {
+  const conexion = await fetch("http://localhost:3000/Cancion", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+          titulo: titulo,
+          url: url,
+          genero: genero
+      })
+  })
+  const conexionConvertida = conexion.json();
+  if (!conexion.ok) {
+      throw new Error("Ha ocurrido un error al enviar la cancion");
+  }
+  return conexionConvertida;
+}

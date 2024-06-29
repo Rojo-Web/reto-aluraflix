@@ -1,10 +1,11 @@
 
 
 import React from 'react'
+import Formulario from '../../Components/Formulario/Index'
 
 const Nuevo = () => {
   return (
-    <div>Nuevo</div>
+    <Formulario/>
   )
 }
 

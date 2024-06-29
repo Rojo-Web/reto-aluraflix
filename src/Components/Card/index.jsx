@@ -12,7 +12,7 @@ export default function MediaCard(props) {
     console.log(urlVideo)
   return (
     
-    <Card sx={{ maxWidth: 345 }} style={{marginRight: 5 + 'em'}}>
+    <Card sx={{ maxWidth: 345 }} style={{marginTop: 2+'em',marginRight: 5 + 'em'}}>
 
       <iframe
         // className={styles.video}
