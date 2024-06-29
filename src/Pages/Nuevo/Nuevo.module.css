@@ -5,3 +5,13 @@
         background-repeat: no-repeat;
         background-position: bottom;
 }
+
+
+@media (min-width: 400px) {
+    .fondo{
+        background-image: url("/assets/fondo2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+    }
+  }
