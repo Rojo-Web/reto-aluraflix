@@ -36,3 +36,17 @@ export async function enviarMusica(titulo, url, genero) {
   }
   return conexionConvertida;
 }
+
+export async function eliminarCancion(id) {
+  const conexion = await fetch(`http://localhost:3000/Cancion/${id}`, {
+      method: "DELETE",
+      headers: {
+          "Content-type": "application/json"
+      }
+  })
+  const conexionConvertida = conexion.json();
+  if (!conexion.ok) {
+      throw new Error("Ha ocurrido un error al eliminar la cancion");
+  }
+  return conexionConvertida
+}

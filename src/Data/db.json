@@ -27,12 +27,6 @@
   ],
   "Cancion": [
     {
-      "id": "1",
-      "titulo": "AISHITE AISHITE AISHITE (愛して愛して愛して)",
-      "genero": "Anime",
-      "url": "https://www.youtube.com/watch?v=7xvnoo8HgZU"
-    },
-    {
       "id": "2",
       "genero": "Rock",
       "titulo": "Hombres G - Devuélveme a mi chica",
@@ -79,24 +73,6 @@
       "titulo": "BABYMETAL - ギミチョコ！！- Gimme chocolate!! (OFFICIAL)",
       "url": "https://www.youtube.com/watch?v=WIKqgE4BwAY",
       "genero": "Anime"
-    },
-    {
-      "id": "8e96",
-      "titulo": "Caravan Palace - Clash (live at Le Trianon, Paris)",
-      "url": "https://www.youtube.com/watch?v=-Xde4Kk-1pI",
-      "genero": "Electro swimn"
-    },
-    {
-      "id": "0780",
-      "titulo": "Caravan Palace - Black Betty",
-      "url": "https://www.youtube.com/watch?v=D_JxMb8RLEY",
-      "genero": "Electro swimn"
-    },
-    {
-      "id": "e5f9",
-      "titulo": "Caravan Palace - About You feat. Charles X (official audio)",
-      "url": "https://www.youtube.com/watch?v=74ekU02fxAQ",
-      "genero": "Electro swimn"
     }
   ]
 }

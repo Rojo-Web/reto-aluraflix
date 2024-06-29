@@ -25,6 +25,7 @@ const Genero = (props) => {
                   <MediaCard
                     titulo={Cancion.titulo}
                     url={Cancion.url}
+                    identificador={Cancion.id}
                     key={Cancion.id}
                     colorFondo={colorPrimario}
                     //   eliminarColaborador={eliminarColaborador}
