@@ -3,7 +3,7 @@
     {
       "id": "1",
       "titulo": "Anime",
-      "colorPrimario": "#fdcd44",
+      "colorPrimario": "#f3f3f3",
       "colorSecundario": "#4D4D4D"
     },
     {
@@ -73,18 +73,6 @@
       "titulo": "BABYMETAL - ギミチョコ！！- Gimme chocolate!! (OFFICIAL)",
       "url": "https://www.youtube.com/watch?v=WIKqgE4BwAY",
       "genero": "Anime"
-    },
-    {
-      "id": "7100",
-      "titulo": "Imagine Dragons - On Top Of The World (Official Music Video)",
-      "url": "https://www.youtube.com/watch?v=w5tWYmIOWGk",
-      "genero": "Rock"
-    },
-    {
-      "id": "9e17",
-      "titulo": "Coldplay - Adventure Of A Lifetime (Official Video)",
-      "url": "https://www.youtube.com/watch?v=QtXby3twMmI",
-      "genero": "Rock"
     }
   ]
 }

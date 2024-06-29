@@ -13,7 +13,8 @@ export default function MediaCard(props) {
   const navigate = useNavigate();
 
   //Añadimos el evento de eliminar un producto a traves del incono
- const deleteCancion = () => {
+ const deleteCancion = (e) => {
+  e.preventDefault();
   const id = identificador;
   console.log(id);
       eliminarCancion(id)

@@ -43,6 +43,7 @@ export async function enviarMusica(titulo, url, genero) {
 }
 
 export async function eliminarCancion(id) {
+  
   const conexion = await fetch(`http://localhost:3000/Cancion/${id}`, {
       method: "DELETE",
       headers: {
