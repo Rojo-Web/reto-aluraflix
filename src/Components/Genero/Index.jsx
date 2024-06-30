@@ -2,7 +2,7 @@ import MediaCard from "../Card";
 import styles from "./Genero.module.css";
 
 const Genero = (props) => {
-  const { colorPrimario, colorSecundario, titulo, cancioness } = props;
+  const { colorPrimario, colorSecundario, titulo, cancioness,actualizarCanciones } = props;
   const colorTitulo = { color: colorPrimario };
   const FondoColor = { backgroundColor: colorSecundario };
   console.log("Estamos aqui");
@@ -26,6 +26,7 @@ const Genero = (props) => {
                     titulo={Cancion.titulo}
                     url={Cancion.url}
                     identificador={Cancion.id}
+                    actualizarMusica={actualizarCanciones}
                     key={Cancion.id}
                     colorFondo={colorPrimario}
                     //   eliminarColaborador={eliminarColaborador}

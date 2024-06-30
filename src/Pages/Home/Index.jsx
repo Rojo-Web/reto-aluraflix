@@ -18,6 +18,13 @@ const Home = () => {
   console.log("generos ", generos);
   console.log("Canciones ", canciones, "   ", typeof canciones);
 
+    //Eliminar el colaborador
+    const eliminarCanciones = (id) => {
+      const nuevasCanciones = canciones.filter((cancion) => cancion.id !== id)
+      console.log(nuevasCanciones);
+      setCanciones(nuevasCanciones)
+    };
+
   return (
     <>
       <Banner
@@ -35,6 +42,7 @@ const Home = () => {
             colorPrimario={genero.colorPrimario}
             colorSecundario={genero.colorSecundario}
             titulo={genero.titulo}
+            actualizarCanciones={eliminarCanciones}
             cancioness={canciones.filter(
               (cancion) => cancion.genero === genero.titulo
             )}

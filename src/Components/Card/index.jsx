@@ -8,7 +8,7 @@ import { eliminarCancion, urlCodigo } from "../../API/Api";
 import { useNavigate } from "react-router-dom";
 
 export default function MediaCard(props) {
-  const { titulo, url,identificador } = props;
+  const { titulo, url,identificador,actualizarMusica } = props;
   const urlVideo = urlCodigo(url);
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ export default function MediaCard(props) {
   console.log(id);
       eliminarCancion(id)
       .then(() => {
-        navigate(0);
+        actualizarMusica(id)
       })
       .catch((err) => console.log(err));
   };
